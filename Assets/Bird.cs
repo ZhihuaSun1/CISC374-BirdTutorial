@@ -1,9 +1,10 @@
 using UnityEngine;
 
-public class birdscript : MonoBehaviour
+public class Bird : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
-    
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
@@ -12,6 +13,6 @@ public class birdscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myRigidbody.velocity
+        
     }
 }
