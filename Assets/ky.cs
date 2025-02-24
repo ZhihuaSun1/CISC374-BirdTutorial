@@ -8,7 +8,7 @@ public class ky : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        spawnPipe();
     }
 
     // Update is called once per frame
@@ -17,8 +17,12 @@ public class ky : MonoBehaviour
         if(timer < spawnRate){
             timer = timer + Time.deltaTime;
         }else{
-            Instantiate(pipe, transform.position, transform.rotation);
+            spawnPipe();
             timer = 0;
         }
+    }
+
+    void spawnPipe(){
+        Instantiate(pipe, transform.position, transform.rotation);
     }
 }
