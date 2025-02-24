@@ -3,6 +3,8 @@ using UnityEngine;
 public class ky : MonoBehaviour
 {
     public GameObject pipe;
+    public float spawnRate = 2;
+    private float timer = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,6 +14,11 @@ public class ky : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Instantiate(pipe, transform.position, transform.rotation);
+        if(timer < spawnRate){
+            timer = timer + Time.deltaTime;
+        }else{
+            Instantiate(pipe, transform.position, transform.rotation);
+            timer = 0;
+        }
     }
 }
