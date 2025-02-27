@@ -12,11 +12,12 @@ public class Bird : MonoBehaviour
     private float leftBoundary;
     private float rightBoundary;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public AudioClip collisionSound;
+
     void Start()
     {
         logic = GameObject.FindGameObjectWithTag("logic").GetComponent<logicscript>();
-                Camera mainCam = Camera.main;
+        Camera mainCam = Camera.main;
 
         float cameraY = mainCam.transform.position.y; 
         float cameraX = mainCam.transform.position.x; 
@@ -28,13 +29,13 @@ public class Bird : MonoBehaviour
         leftBoundary   = cameraX - orthoSize * aspect;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (birdIsAlive && Input.GetKeyDown(KeyCode.Space))
         {
             myRigidbody.linearVelocity = Vector2.up * flapStrength;
         }
+
         if (birdIsAlive && 
             (transform.position.y > topBoundary || transform.position.y < bottomBoundary
             || transform.position.x > rightBoundary || transform.position.x < leftBoundary))
@@ -49,6 +50,8 @@ public class Bird : MonoBehaviour
     {
         if (birdIsAlive)
         {
+            AudioSource.PlayClipAtPoint(collisionSound, transform.position);
+
             logic.gameOver();
             birdIsAlive = false;
         }
