@@ -1015,7 +1015,7 @@ MonoBehaviour:
   playerScore: 0
   scoreText: {fileID: 464460364}
   gameOverScreen: {fileID: 1386322030}
-  dingSFX: {fileID: 0}
+  dingWAX: {fileID: 1894609809}
 --- !u!4 &1894609808
 Transform:
   m_ObjectHideFlags: 0
@@ -1041,8 +1041,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fa0e3813bdc894e269977603a16c46bb, type: 3}
+  m_Resource: {fileID: 8300000, guid: fa0e3813bdc894e269977603a16c46bb, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
