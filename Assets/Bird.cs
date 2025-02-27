@@ -4,10 +4,12 @@ public class Bird : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
     public float flapStrength;
+    public logicscript logic;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        logic = GameObject.FindGameObjectWithTag("logic").GetComponent<logicscript>();
     }
 
     // Update is called once per frame
@@ -19,4 +21,8 @@ public class Bird : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        logic.gameOver();
+    }
 }
