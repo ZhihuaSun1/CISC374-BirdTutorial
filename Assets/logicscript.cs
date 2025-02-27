@@ -6,14 +6,19 @@ public class logicscript : MonoBehaviour
     public int playerScore;
     public Text scoreText;
     public GameObject gameOverScreen;
-    public AudioSource dingWAX;
+    public AudioClip scoreClip;
+    private AudioSource audioSource;
 
     [ContextMenu("Increase Score")]
     public void addScore(int scoreToAdd)
     {
         playerScore = playerScore + scoreToAdd;
         scoreText.text = playerScore.ToString();
-        dingWAX.Play();
+        audioSource = GetComponent<AudioSource>();
+    }
+    public void OnScore()
+    {
+        audioSource.PlayOneShot(scoreClip);
     }
 
     public void restarGame()
