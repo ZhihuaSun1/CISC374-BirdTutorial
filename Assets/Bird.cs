@@ -21,7 +21,10 @@ public class Bird : MonoBehaviour
         {
             myRigidbody.linearVelocity = Vector2.up * flapStrength; 
         }
+
+        if (transform.position.y > 17 || transform);
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
