@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 9034920527380211459}
   - component: {fileID: 812903053961110023}
+  - component: {fileID: 4005494544023313015}
   m_Layer: 0
   m_Name: Cloud
-  m_TagString: cloud
+  m_TagString: Cloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,3 +88,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4005494544023313015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6778689382599292398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16b26c11fb0a42e49ff8d12043850c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  driftSpeed: 0.2
+  driftDirection: {x: 1, y: 0}
