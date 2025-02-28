@@ -3,8 +3,8 @@ This is a tutorial project used to overview Unity3D in CISC374.
 The music I use is duang and ding from
 https://opengameart.org/content/metal-hit and https://opengameart.org/content/point-bell 
 I want to add 7 function
-1. Background cloud particle effect
-Use particle system to generate dynamic clouds to add layers to the game background.
+1. Background cloud 
+I'm generating six clouds and decreasing and then increasing them by one per second to distract the player. To make their gameplay difficult.
 
 2. Bird Wings Animation
 Create a bird wing flapping animation to increase the dynamic performance of the bird.
