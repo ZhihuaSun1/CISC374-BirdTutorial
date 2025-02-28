@@ -12,7 +12,7 @@ public class logicscript : MonoBehaviour
 
     private int highScore;
     private int comboCount = 0;
-    public int baseScore = 1;
+    public int baseScore = 0;
 
     void Start()
     {
