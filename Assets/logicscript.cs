@@ -11,9 +11,8 @@ public class logicscript : MonoBehaviour
     public AudioSource dingWAX;
 
     private int highScore;
+
     private int comboCount = 0;
-  
-    public int baseScore = 1;
 
     void Start()
     {
@@ -28,9 +27,8 @@ public class logicscript : MonoBehaviour
     }
     public void addScoreWithCombo()
     {
-        comboCount++;  
-        int scoreToAdd = (comboCount == 1) ? baseScore : baseScore + comboCount;
-
+        comboCount++; 
+        int scoreToAdd = comboCount;  
         playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
 
