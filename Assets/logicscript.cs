@@ -11,10 +11,13 @@ public class logicscript : MonoBehaviour
     public AudioSource dingWAX;
 
     private int highScore;
+    private int comboCount = 0;
+    public int baseScore = 1;
 
     void Start()
     {
         playerScore = 0;
+        comboCount = 0;
         scoreText.text = playerScore.ToString();
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         if (highScoreText != null)
@@ -23,12 +26,19 @@ public class logicscript : MonoBehaviour
         }
     }
 
-    [ContextMenu("Increase Score")]
-    public void addScore(int scoreToAdd)
+    public void addScoreWithCombo()
     {
+        comboCount++;  
+
+        int scoreToAdd = baseScore + comboCount;
         playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
-        dingWAX.Play();
+
+        if (dingWAX != null)
+        {
+            dingWAX.Play();
+        }
+
         if (playerScore > highScore)
         {
             highScore = playerScore;
@@ -37,17 +47,24 @@ public class logicscript : MonoBehaviour
                 highScoreText.text = "High Score: " + highScore;
             }
             PlayerPrefs.SetInt("HighScore", highScore);
-            PlayerPrefs.Save();  
+            PlayerPrefs.Save();
         }
+    }
+
+    public void ResetCombo()
+    {
+        comboCount = 0;
     }
 
     public void restarGame()
     {
+        ResetCombo();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void gameOver()
     {
         gameOverScreen.SetActive(true);
+        ResetCombo();
     }
 }
