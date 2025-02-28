@@ -12,7 +12,8 @@ public class logicscript : MonoBehaviour
 
     private int highScore;
     private int comboCount = 0;
-    public int baseScore = 0;
+  
+    public int baseScore = 1;
 
     void Start()
     {
@@ -25,12 +26,11 @@ public class logicscript : MonoBehaviour
             highScoreText.text = "High Score: " + highScore;
         }
     }
-
     public void addScoreWithCombo()
     {
         comboCount++;  
+        int scoreToAdd = (comboCount == 1) ? baseScore : baseScore + comboCount;
 
-        int scoreToAdd = baseScore + comboCount;
         playerScore += scoreToAdd;
         scoreText.text = playerScore.ToString();
 
